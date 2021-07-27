@@ -1,0 +1,44 @@
+body {
+    background-color: lavender;
+}
+
+header {
+    border: 4px solid lightblue;
+    border-radius: 10px;
+    padding: 1%;
+}
+.main {
+    display: flex;
+    flex-basis: 100%;
+    margin: 2%;
+}
+
+
+.forecast {
+    border: lightcoral dotted 5px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    flex-basis:70%;
+}
+
+
+aside {
+    border: lightcoral dotted 5px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    flex-basis:20%;
+}
+
+.placeholder {
+    width: 20%;
+
+}
+
+.cityBtn {
+    color: lightyellow;
+    border: 5px lightcyan solid;
+    border-radius: 10px;
+    background-color: lightslategray;
+}
