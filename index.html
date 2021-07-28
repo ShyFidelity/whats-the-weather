@@ -14,12 +14,12 @@
 <aside >
     <form>
         <input type=text class ="searchcity">
+        <button class = "searchBtn">Search</button>
     </form>
-    <button class = "searchBtn"></button>
-    <button class = "cityBtn">
+    <button id= "atlBtn" class = "cityBtn">
         Atlanta  
     </button>
-    <button class = "cityBtn">
+    <button id = "aus" class = "cityBtn">
         Austin
     </button>
     <button class = "cityBtn">
@@ -38,11 +38,13 @@
 </aside>
 
 <div class= "forecast">
-    <img class="placeholder" src="assets/fitzisrich7.png">
-    <div class="todaysforecast"></div>
-    <div class="fivedayforecast"></div>
-    </div>
+    
+    <table id="todaysforecast"></table>
+    <div id="fivedayforecast"></div>
+</div>
  
 </container>
+
+<script src = "./assets/script/script.js"></script>
 </body>
 </html>
