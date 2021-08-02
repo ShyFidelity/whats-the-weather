@@ -47,6 +47,7 @@ function getWeather(event) {
     })
     .then(function (data) {
       console.log(data);
+      localStorage.setItem("data",JSON.stringify(data[0].name));
       return data;
     })
 
@@ -64,14 +65,11 @@ function getWeather(event) {
            var tableData = document.createElement("td");
 
 
-          localStorage.setItem("data",JSON.stringify(data[0].name));
+          
 
          
           // Setting the text of link and the href of the link
           tableData.textContent = data.current.temp;
-
-          // Appending the link to the tabledata and then appending the tabledata to the tablerow
-          // The tablerow then gets appended to the tablebody
           // tableData.appendChild(link);
           todaysForecast.appendChild(tableData);
           // tableBody.appendChild(createTableRow);
