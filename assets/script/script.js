@@ -1,14 +1,22 @@
 var todaysForecast = document.getElementById("todaysforecast");
 var searchBtn = document.getElementById("searchBtn");
-var cityBtn = document.getElementById("searchBtns")
+var cityBtn = document.getElementById("searchBtns");
+
 
 //add to local storage 
 
 function cityButton(event){
+  event.preventDefault();
   var buttonValue = event.target.textContent
-  var cityDisplay = document.getElementById("searchcity");
+  var cityDisplay = document.getElementById("searchcity").value;
 
   cityDisplay.value = buttonValue
+
+  
+
+  console.log(cityDisplay)
+       
+    
 //add code to local storage here 
   getWeather(event)
 }
@@ -20,6 +28,8 @@ function citySearch(event){
 
   newBtn.textContent = cityDisplay
   cityBtn.append(newBtn)
+  newBtn.setAttribute("style", "display: block; width: 90%; color: whitesmoke; border: 2px lightcyan solid; border-radius: 10px; background-color: lightslategray; padding: 10px; margin: 1%;")
+
   getWeather(event)
 }
 
@@ -49,11 +59,14 @@ function getWeather(event) {
         .then(function (data) {
           console.log(data)
           //button click works returns data to console
-          //do i need to create a table element here? what am i placing exactly
+            console.log(searchCity)
+           // Creating elements, tablerow, tabledata, and anchor
+           var tableData = document.createElement("td");
 
-          // Creating elements, tablerow, tabledata, and anchor
-          var tableData = document.createElement("td");
 
+          localStorage.setItem("data",JSON.stringify(data[0].name));
+
+         
           // Setting the text of link and the href of the link
           tableData.textContent = data.current.temp;
 
