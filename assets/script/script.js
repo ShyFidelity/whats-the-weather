@@ -3,9 +3,8 @@ var searchBtn = document.getElementById("searchBtn");
 var cityBtn = document.getElementById("searchBtns");
 var pastCitySearch = JSON.parse(localStorage.getItem("data")) || [];
 
-//add for loop over pCS that will run in 2 places one on page load and after search city gets ran
 
-//new function up here called 
+//search begins on button click 
 function cityButton(event){
   event.preventDefault();
   var buttonValue = event.target.textContent
@@ -13,14 +12,11 @@ function cityButton(event){
 
   cityDisplay.value = buttonValue
 
-  
-
-  console.log(cityDisplay)
-       
-    
-//add code to local storage here 
+  // call get weather event on button click 
   getWeather(event)
 }
+
+
 
 function citySearch(event){
   event.preventDefault();
@@ -28,6 +24,7 @@ function citySearch(event){
   const newBtn = document.createElement("button");
 
   newBtn.textContent = cityDisplay
+  //creates a new button with the city search displayed in text 
   cityBtn.append(newBtn)
   newBtn.setAttribute("style", "display: block; width: 90%; color: whitesmoke; border: 2px lightcyan solid; border-radius: 10px; background-color: lightslategray; padding: 10px; margin: 1%;")
 // call here 
@@ -74,7 +71,6 @@ function getWeather(event) {
            var weatherIcon = response.current.weather[0].icon;
            var weatherImage = document.createElement("img");
 
-
            
            weatherImage.setAttribute(
              "src",
@@ -94,14 +90,16 @@ function getWeather(event) {
     });
 }
 
+// appending 5 day forecast 
 function fiveDay (fivedaydata){
 
   var fiveDayDiv = document.getElementById("fivedayforecast")
   fiveDayDiv.innerHTML = ""
 
   fivedaydata.daily.splice(1,5).forEach(forecast => {
+    //formating date 
     var dateTime = forecast.dt * 1000
-    console.log(new Date(dateTime).toLocaleString())
+    var displayDate = new Date(dateTime).toLocaleString()
     var divEl = document.createElement("div");
     var tempEl = document.createElement("p");
 
@@ -114,6 +112,32 @@ function fiveDay (fivedaydata){
     uviEl.textContent = "uvi: " + forecast.uvi
 
     divEl.append(uviEl)
+
+    var moonEl = document.createElement("p")
+
+    moonEl.textContent = "moon phase: " + forecast.moon_phase
+
+    divEl.append(moonEl)
+
+    var dateEl = document.createElement("p")
+
+  dateEl.textContent = displayDate
+
+  divEl.append(dateEl)
+
+
+
+    // var weatherIcon = fivedaydata.daily.weather.icon;
+    //        var weatherImage = document.createElement("img");
+
+
+           
+    //        weatherImage.setAttribute(
+    //          "src",
+    //          "http://openweathermap.org/img/wn/" + weatherIcon + "@2x.png"
+    //        );
+    //        todaysForecast.appendChild(weatherImage)
+         
 
 
 

@@ -25,16 +25,34 @@ form {
     margin: 1%;
 }
 
-
+.weatherdivs {
+    font-family: 'Josefin Sans', sans-serif;
+    color: white;
+    display: flex;
+    flex-wrap: wrap;
+    flex-basis: 80%;
+}
 .forecast {
+    border:whitesmoke solid 5px;
+    border-radius: 5px;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    margin: 2%;
+    flex-basis:80%;
+}
+
+#fivedayforecast {
     border:whitesmoke solid 5px;
     border-radius: 5px;
     display: flex;
     flex-wrap: wrap;
-    flex-direction: column;
+    flex-direction: row;
+    justify-content: space-evenly;
     margin: 2%;
-    flex-basis:75%;
+    flex-basis:80%;
 }
+
 
 
 aside {
