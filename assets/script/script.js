@@ -107,7 +107,7 @@ function fiveDay (fiveDayData){
     var uviEl = document.createElement("p");
     var moonEl = document.createElement("p");
     var dateEl = document.createElement("p");
-
+    //adding different data to div 
     tempEl.textContent = "temp: " + forecast.temp.day 
     divEl.append(tempEl)
 
