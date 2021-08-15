@@ -35,12 +35,20 @@ form {
 .forecast {
     border:whitesmoke solid 5px;
     border-radius: 5px;
-    align-items: center;
-    display: flex;
-    flex-direction: row;
+    display: block;
     margin: 2%;
     flex-basis:80%;
+    padding: 2%;
 }
+
+#todaysforecast {
+    display: flex;
+    flex-wrap: wrap;
+    align-items:flex-start;
+    flex-direction: column;
+    padding: 3%;
+}
+
 
 #fivedayforecast {
     border:whitesmoke solid 5px;
