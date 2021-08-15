@@ -92,17 +92,7 @@ function getWeather(event) {
           todaysForecast.appendChild(tableData);
 
           //creating elements for daily forecast 
-          //date
-          parseDateEl.textContent = "date: " + parseDate
-          todaysForecast.appendChild(parseDateEl)
-          //wind
-          windDailyEl.textContent = "wind: " + response.current.wind_speed + " MPH"
-          todaysForecast.appendChild(windDailyEl)
-          //humidity 
-          humidityDailyEl.textContent = "humidity: " + response.current.humidity 
-          todaysForecast.appendChild(humidityDailyEl)
-
-
+      
          //change background color based off uv index
           uvIndexEl.textContent = "uvi: " + uvIndex
           if (uvIndex < 3) {
@@ -118,8 +108,16 @@ function getWeather(event) {
           }
 
           todaysForecast.appendChild(uvIndexEl)
+           //humidity 
+           humidityDailyEl.textContent = "humidity: " + response.current.humidity 
+           todaysForecast.appendChild(humidityDailyEl)
+           //wind
+           windDailyEl.textContent = "wind: " + response.current.wind_speed + " MPH"
+           todaysForecast.appendChild(windDailyEl)
 
-
+              //date
+          parseDateEl.textContent = "date: " + parseDate
+          todaysForecast.appendChild(parseDateEl)
           console.log(uvIndex);
 
           document.getElementById("searchcity").value = "";
@@ -174,7 +172,7 @@ function fiveDay(fiveDayData) {
 
 searchBtn.addEventListener("click", citySearch);
 cityBtn.addEventListener("click", cityButton);
-//city displays on page load 
+//city displays on page
 document.addEventListener("DOMContentLoaded", function () {
   pastCitySearch.forEach((element) => {
     console.log(element);
