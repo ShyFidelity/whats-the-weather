@@ -12,6 +12,10 @@ function cityButton(event) {
   var cityDisplay = document.getElementById("searchcity");
 
   cityDisplay.value = buttonValue;
+  const cityDisplayHeader = document.createElement("h3");
+  cityDisplayHeader.textContent = cityDisplay.value;
+  cityNameEl.append(cityDisplayHeader)
+ 
 
   // call get weather event on button click
   getWeather(event);
@@ -114,8 +118,7 @@ function getWeather(event) {
            //wind
            windDailyEl.textContent = "wind: " + response.current.wind_speed + " MPH"
            todaysForecast.appendChild(windDailyEl)
-
-              //date
+          //date
           parseDateEl.textContent = "date: " + parseDate
           todaysForecast.appendChild(parseDateEl)
           console.log(uvIndex);
