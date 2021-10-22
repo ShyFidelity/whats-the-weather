@@ -12,7 +12,7 @@ I learned a lot in this homework! While doing this project
 ![screenshot of my image](./assets/images/weatherSS.png)
 
 ## Here is a link to my work:
-[See it here](https://jilliankayworks.github.io/whats-the-weather/)
+[See it here](https://shyfidelity.github.io/whats-the-weather/)
 
 
 ## Table of Contents 
